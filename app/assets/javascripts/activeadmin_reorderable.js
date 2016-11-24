@@ -44,7 +44,7 @@ $.fn.reorderable = function(opts) {
       $(this).find('.position').text(index($(this)));
     });
 
-    $.post(url, { position: index($row) });
+    $.post(url, { position: index($row), parent: window.location.pathname });
   }
 
   return this.each(function() {
