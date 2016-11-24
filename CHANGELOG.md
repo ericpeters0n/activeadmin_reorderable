@@ -1,5 +1,6 @@
 # Changelog
 
-## 0.0.3
+## 0.0.4
 
-- Removed a console.log within the reordering JavaScript.
+- Changed the reordering post to include the sending page
+- Minor fix to nudge version

@@ -1,6 +1,7 @@
 # ActiveAdmin Reorderable
 
 Drag and drop to reorder your ActiveAdmin tables.
+(Minor fork by ericpeters0n to accommodate reordering of lists defined under HABTM association.)
 
 ![Drag and drop reordering](https://s3.amazonaws.com/kurtzkloud.com/p/activeadmin_reorderable/screenshot.gif)
 
