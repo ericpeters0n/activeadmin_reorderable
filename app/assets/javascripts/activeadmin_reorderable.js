@@ -44,7 +44,20 @@ $.fn.reorderable = function(opts) {
       $(this).find('.position').text(index($(this)));
     });
 
-    $.post(url, { position: index($row), parent: window.location.pathname });
+    var _post_params = { position: index($row) }
+    var _path = window.location.pathname;
+    
+    if (_path.split("/admin/")[1]!=null){
+      var _path_components = _path.split('/'),
+          _parent_type = _path_components[2],
+          _parent_id = _path_components[3];
+      if ((_parent_type!=null) && (_parent_id!=null)){ 
+        _post_params['parent_type']=_parent_type;
+        _post_params['parent_id']=_parent_id;
+      } 
+    }
+
+    $.post(url, _post_params);
   }
 
   return this.each(function() {
