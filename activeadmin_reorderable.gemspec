@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = "Drag and drop reordering for ActiveAdmin tables"
   s.description = "Add drag and drop reordering to ActiveAdmin tables."
   s.license     = "MIT"
-  s.version     = "0.0.4"
+  s.version     = "0.0.5"
 
   s.files = `git ls-files`.split($/)
 

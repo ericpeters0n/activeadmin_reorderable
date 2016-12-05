@@ -13,6 +13,16 @@ Your resource classes must respond to `insert_at` ala the [`acts_as_list`](https
 - Add `#= require activeadmin_reorderable` to `app/assets/javascripts/active_admin.js.coffee`
 - Add `@import "activeadmin_reorderable";` as the last `@import` statement in `app/assets/stylesheets/active_admin.css.scss`
 
+If you have models you wish to order within HABTM associations, create the 'order' column in the appropriate join table.
+`20161122232357_add_order_to_parts_widgets.rb`
+```ruby
+class AddOrderToPartsWidgets < ActiveRecord::Migration
+  def change
+    add_column :parts_widgets, :order, :integer
+  end
+end
+```
+
 ## Use
 `parts.rb`
 ```ruby
@@ -50,6 +60,13 @@ ActiveAdmin.register Widget do
       column :name
       column :cost
     end
+
+    # Alternately, Reorderable  subtable for HABTM
+    reorderable_table_for_habtm widget.parts do
+      column :name
+      column :cost
+    end
+
   end
 end
 ```
