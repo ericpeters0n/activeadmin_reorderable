@@ -14,6 +14,7 @@ Your resource classes must respond to `insert_at` ala the [`acts_as_list`](https
 - Add `@import "activeadmin_reorderable";` as the last `@import` statement in `app/assets/stylesheets/active_admin.css.scss`
 
 If you have models you wish to order within HABTM associations, create the 'order' column in the appropriate join table.
+(`acts_as_list` doesn't handle HABTM, so we have to create this migration ourselves.)
 `20161122232357_add_order_to_parts_widgets.rb`
 ```ruby
 class AddOrderToPartsWidgets < ActiveRecord::Migration
