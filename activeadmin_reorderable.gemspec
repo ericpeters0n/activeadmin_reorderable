@@ -11,9 +11,9 @@ Gem::Specification.new do |s|
   s.summary     = "Drag and drop reordering for ActiveAdmin tables with support for HABTM associations"
   s.description = "Add drag and drop reordering to ActiveAdmin tableswith support for HABTM associations and reloading."
   s.license     = "MIT"
-  s.version     = "0.0.6"
+  s.version     = "0.1.4.1"
 
   s.files = `git ls-files`.split($/)
 
-  s.add_development_dependency "activeadmin", ">= 0.6"
+  s.add_development_dependency "activeadmin", ">= 1.4.3"
 end

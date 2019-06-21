@@ -11,7 +11,11 @@ module ActiveAdmin
       private
 
       def reorder_handle_for(resource)
-        url = url_for([:reorder, active_admin_namespace.name, resource])
+        aa_resource   = active_admin_namespace.resource_for(resource.class)
+        instance_name = aa_resource.resources_configuration[:self][:route_instance_name]
+
+        url = send([:reorder, aa_resource.route_prefix, instance_name, :path].join('_'), resource)
+
         span(reorder_handle_content, :class => 'reorder-handle', 'data-reorder-url' => url)
       end
 
