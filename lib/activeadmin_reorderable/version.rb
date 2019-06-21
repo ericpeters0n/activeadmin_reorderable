@@ -1,3 +1,3 @@
 module ActiveadminReorderable
-  VERSION = "0.0.5"
+  VERSION = "0.1.4"
 end
